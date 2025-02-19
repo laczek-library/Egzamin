@@ -1,13 +1,31 @@
 # Mapa
+- [Netplan](#netplan)
+- [Samba](#samba)
+- [Crontab ?](#crontab-)
+- [SSH](#ssh)
+- [DHCP](#dhcp)
+- [Apache](#apache)
+- [DNS](#dns)
+- [FTP](#ftp)
+- [Quota](#quota)
+- [Mail](#mail)
 
-## NETPLAN
-## SAMBA
-## CRONTAB ?
+## Netplan
+
+## Samba
+
+## Crontab ?
+
 ## SSH
+
 ## DHCP
-## APACHE
+
+## Apache
+
 ## DNS
-[przykład](#apache)
+
 ## FTP
-## QUOTA
-## MAIL
+
+## Quota
+
+## Mail
