@@ -11,7 +11,7 @@
 - [Mail](#mail)
 
 ## Netplan
-![netplan](https://github.com/user-attachments/assets/6448dd11-b6c9-4cfc-85e7-961dfb624882)
+![netplan](https://github.com/user-attachments/assets/d72cdcd0-ca44-4da8-b6fc-a1eb55ab7c72)
 
 ## Samba
 
