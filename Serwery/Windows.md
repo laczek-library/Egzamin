@@ -7,6 +7,7 @@
   - [FTP](#ftp)
 - [Drukarki](#drukarki)
 - [Quota](#quota)
+- [VPN](#vpn)
 - [Kopie Zapasowe](#kopie-zapasowe)
 - [Zapora](#zapora)
 - [GPO](#gpo)
@@ -21,6 +22,7 @@
 ### FTP
 ## Drukarki
 ## Quota
+## VPN
 ## Kopie Zapasowe
 ## Zapora
 ## GPO
