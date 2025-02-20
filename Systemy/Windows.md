@@ -1,5 +1,5 @@
 # MAPA
-- [Komendy](#komendy)
+- [Polecenia](#polecenia)
 - [Kosztorys](#kosztorys)
 - [Edytor Zasad Grupy](#edytor-zasad-grupy)
 - [Kopie Zapasowe](#kopie-zapasowe)
@@ -9,7 +9,7 @@
 - [Testy Podzespołów](#testy-podzespołów)
 
 
-## Komendy
+## Polecenia
 ### Użytkownicy 
 ### Pliki i Uprawnienia
 ### Systemowe
