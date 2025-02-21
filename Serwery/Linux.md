@@ -12,7 +12,13 @@
 
 ## Netplan
 Mam nadzieję, że nie będzie niczego oprócz konfiguracji karty.
+
 ![netplan](https://github.com/user-attachments/assets/d72cdcd0-ca44-4da8-b6fc-a1eb55ab7c72)
+```
+$ sudo netplan apply
+
+$ sudo netplan get all
+```
 
 ## Samba
 
