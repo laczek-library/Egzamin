@@ -11,14 +11,15 @@
 - [Mail](#mail)
 
 # WAŻNE
-Rób backupy plików, PODCZAS EGZAMINU NIE BEDZIESZ MOG REINSTALLOWAĆ.
+**Rób backupy plików, PODCZAS EGZAMINU NIE BEDZIESZ MOG REINSTALLOWAĆ.**
 
 ## Netplan
 Mam nadzieję, że nie będzie niczego oprócz konfiguracji karty.
 
 ```
 $ sudo netplan apply
-
+```
+```
 $ sudo netplan get all
 ```
 
@@ -49,6 +50,7 @@ smbclient -L localhost
 ```
 
 Aby anonimowo zmienić uprawnienia katalogu zasobu i katalogu domowego użytkownika.
+
 Podczas testowania nie udało się otworzyć zasobu anonimowego na Windows 10 bez byle jakiego loginu.
 
 ### Plik konfiguracyjny /etc/samba/smb.conf
