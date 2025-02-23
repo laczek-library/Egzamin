@@ -8,6 +8,7 @@ Tak jak mówił pan Gac, będzie tu zbiór notatek na np. pliki konfiguracyjne, 
 - [Inne](https://egzamin-informatyk.pl/arkusze-praktyczne-inf02-ee08-sprzet-systemy-sieci/)
 
 ## Zakres przedmiotów:
+
 - Sieci
   - Cisco
   - Mikrotik
@@ -16,5 +17,5 @@ Tak jak mówił pan Gac, będzie tu zbiór notatek na np. pliki konfiguracyjne, 
   - Linux   
 - Systemy
   - Windows
-  - Linux
+  - ~Linux~ $~~~~~~~~~~~~~~~~~~~~~~$ (skończone)
 - UTK
