@@ -17,10 +17,10 @@
 Mam nadzieję, że nie będzie niczego oprócz konfiguracji karty.
 
 ```
-$ sudo netplan apply
+sudo netplan apply
 ```
 ```
-$ sudo netplan get all
+sudo netplan get all
 ```
 
 ### Konfiguracja /etc/netplan/*.yaml (można zrobić swój od 0)
@@ -31,7 +31,7 @@ Zrób backup przed i czytaj komentarze.
 
 - Sprawdzanie konfiguracji
 ```
-$ testparm
+testparm
 ```
 
 - Utworzenia konta w sambie
