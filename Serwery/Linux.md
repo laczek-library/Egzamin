@@ -1,6 +1,7 @@
 # Mapa
 - [Netplan](#netplan)
 - [Samba](#samba)
+- [Iptables](#iptables)
 - [Crontab ?](#crontab-)
 - [SSH](#ssh)
 - [DHCP](#dhcp)
@@ -55,6 +56,8 @@ Podczas testowania nie udało się otworzyć zasobu anonimowego na Windows 10 be
 
 ### Plik konfiguracyjny /etc/samba/smb.conf
 ![samba](https://github.com/user-attachments/assets/e235f7e7-0501-4da2-88aa-125fa4828a4c)
+
+## Iptables
 
 ## Crontab ?
 
