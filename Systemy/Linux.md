@@ -11,19 +11,6 @@ Ubuntu Desktop
 - [Konfiguracja GRUB ](#konfiguracja-grub)
 
 
-## Polecenia
-#### Systemowe
-- dmidecode
-- lsblk
-- ...
-#### Użytkownicy
-- chown
-- chmod -G
-- ...
-#### Uprawnienia
-- chmod
-- ...
-  
 ## Archiwizacja Danych
 #### Rozszerzenia:
 - .tar
@@ -46,7 +33,60 @@ tar -xvf n_sbin.tar -C ~
 ```
 
 ## Budowa Środowiska Graficznego (DE) + Struktura Plików
+Aha
+
+```sh
+startx
+```
 
 ## Podstawy Repozytoriów
+- DPKG
+- APT
 
-## Konfiguracja GRUB 
+```sh
+sudo add-apt-repository *nazwa_repozytoria*
+```
+
+## Konfiguracja GRUB
+/etc/grub.d
+
+/etc/default/grub
+
+/boot/grub/
+
+```sh
+sudo update-grub
+```
+
+## Polecenia
+#### Systemowe
+```sh
+dmidecode     # hardware info
+uname         # system info
+lsblk         # list block devices
+du            # disk usage
+df            # disk space usage
+top           
+ps            # process status
+fdisk         
+mnt           
+hwinfo        
+lshw          # list hardware
+hostnamectl   
+history       
+ln            # links
+```
+#### Użytkownicy
+```sh 
+userdel      
+useradd      
+adduser      # script
+usermod
+usermod -G   
+```
+#### Uprawnienia
+```sh
+chmod   
+chown 
+mv           # rename 
+```
