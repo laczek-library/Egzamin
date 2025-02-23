@@ -17,5 +17,5 @@ Tak jak mówił pan Gac, będzie tu zbiór notatek na np. pliki konfiguracyjne, 
   - Linux   
 - Systemy
   - Windows
-  - ~Linux~ $~~~~~~~~~~~~~~~~~~~~~~$ (skończone)
+  - [~Linux~](./systemy/linux.md/#mapa) $~~~~~~~~~~~~~~~~~~~~~~$ (skończone)
 - UTK
