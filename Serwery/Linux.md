@@ -10,6 +10,7 @@
 - [FTP](#ftp)
 - [Quota](#quota)
 - [Mail](#mail)
+- [Polecenia](#polecenia)
 
 # WAŻNE
 **Rób backupy plików, PODCZAS EGZAMINU NIE BEDZIESZ MOG REINSTALLOWAĆ.**
@@ -131,12 +132,26 @@ sudo iptables -t nat -A POSTROUTING -s *adres sieci*/*maska* -j MASQUERADE
 ### Plik konfiguracyjny /etc/dhcp/dhcpd.conf
 ![dhcp](https://github.com/user-attachments/assets/e3c57c51-af5d-4430-80d5-94ebe14a7c4e)
 
-## Apache
+# Apache
 
-## DNS
+# DNS
 
-## FTP
+# FTP
 
-## Quota
+# Quota
 
-## Mail
+# Mail
+
+# Polecenia
+```sh
+resolvectl        # DNS-y
+tracert
+dhclient          # Pobieranie ustawień DHCP
+nmcli             # Ustawienia karty
+```
+
+- Dodanie tymczasowego adresu
+```sh
+sudo ip addr add *adres*/*maska* dev *karta*
+```
+
