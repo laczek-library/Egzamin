@@ -5,7 +5,7 @@
 - [Udostępnianie Zasobów](#udostępnianie-zasobów)
 - [***Skrypty***](#skrypty)
 
-# Jak nie znasz tego to powodzenia z zdaniem.
+# ***Jak nie znasz tego to powodzenia z zdaniem!***
 
 # Polecenia
 ### Użytkownicy 
