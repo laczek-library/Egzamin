@@ -123,7 +123,7 @@ sudo sysctl -p  # sprawdza co odkomentowałeś
 ```
 - Dodanie reguły do iptables:  
 ```sh
-sudo iptables -t nat -A POSTROUTING -s 172.21.194.176/29 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -s *adres sieci*/*maska* -j MASQUERADE
 ```
 
 ---
