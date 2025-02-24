@@ -1,29 +1,47 @@
 # MAPA
 - [Polecenia](#polecenia)
-- [Kosztorys](#kosztorys)
-- [Edytor Zasad Grupy](#edytor-zasad-grupy)
+- [Edytor Zasad Grupy](#edytor-zasad-grupy-&-konsola-zarządzania)
 - [Kopie Zapasowe](#kopie-zapasowe)
 - [Udostępnianie Zasobów](#udostępnianie-zasobów)
 - [***Skrypty***](#skrypty)
-- [Przygotowanie Systemu](#przygotowanie-systemu)
-- [Testy Podzespołów](#testy-podzespołów)
 
+# Jak nie znasz tego to powodzenia z zdaniem.
 
-## Polecenia
+# Polecenia
 ### Użytkownicy 
+```powershell
+net user /?     # informacje użytkownika
+net localgroup
+net accounts
+```
 ### Pliki i Uprawnienia
+```powershell
+dir
+New-Item
+
+```
 ### Systemowe
+```powershell
+tasklist
+```
 
-## Kosztorys
+# Edytor Zasad Grupy & Konsola zarządzania
+```powershell
+gpedit.msc      # Group Policy Managment
+```
+```powershell
+mmc             # Microsoft Managment Console
+```
+Czytaj gdzie klikasz.
 
-## Edytor Zasad Grupy
+# Kopie Zapasowe
+- Panel sterowania &rarr; backup & restore (windows7)
+- Ustawienia &rarr; kopie zapasowe
 
-## Kopie Zapasowe
+# Udostępnianie Zasobów
+Właściwości &rarr; Udostępnij
 
-## Udostępnianie Zasobów
+Niewiem co możesz wiecej chcieć.
 
-## ***Skrypty***
-
-## Przygotowanie Systemu
-
-## Testy Podzespołów
+# ***Skrypty***
+GG
