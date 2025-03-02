@@ -27,7 +27,7 @@ sudo netplan get all
 
 ---
 
-## Konfiguracja /etc/netplan/*.yaml (można zrobić swój od 0)
+### Plik konfiguracyjny `/etc/netplan/*.yaml` (można zrobić swój od 0)
 ![netplan](https://github.com/user-attachments/assets/d72cdcd0-ca44-4da8-b6fc-a1eb55ab7c72)
 
 # Samba
@@ -59,7 +59,7 @@ Podczas testowania nie udało się otworzyć zasobu anonimowego na Windows 10 be
 
 ---
 
-### Plik konfiguracyjny /etc/samba/smb.conf
+### Plik konfiguracyjny `/etc/samba/smb.conf`
 ![samba](https://github.com/user-attachments/assets/e235f7e7-0501-4da2-88aa-125fa4828a4c)
 
 # Iptables
@@ -129,12 +129,16 @@ sudo iptables -t nat -A POSTROUTING -s *adres sieci*/*maska* -j MASQUERADE
 
 ---
 
-### Plik konfiguracyjny /etc/dhcp/dhcpd.conf
+### Plik konfiguracyjny `/etc/dhcp/dhcpd.conf`
 ![dhcp](https://github.com/user-attachments/assets/e3c57c51-af5d-4430-80d5-94ebe14a7c4e)
 
 # Apache
 
 # DNS
+
+### Plik konfiguracyjny `/etc/bind/*` (tymczasowy)
+![dns](https://github.com/user-attachments/assets/50912651-9d5d-41aa-a291-5af244106313)
+
 
 # FTP
 
