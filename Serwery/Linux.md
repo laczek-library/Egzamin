@@ -1,7 +1,7 @@
 # Mapa
 - [Netplan](#netplan)
 - [Samba](#samba)
-- [Iptables](#iptables)
+- [Firewall](#firewall-iptables-ufw)
 - [Crontab ?](#crontab-)
 - [SSH](#ssh)
 - [DHCP](#dhcp)
@@ -14,6 +14,8 @@
 
 # WAŻNE
 **Rób backupy plików, PODCZAS EGZAMINU NIE BEDZIESZ MOG REINSTALLOWAĆ.**
+
+**RÓB ĆWICZENIA LOGICZNIE, MOGĄ BYĆ LITERÓWKI W SCREENSHOTACH**
 
 # Netplan
 Mam nadzieję, że nie będzie niczego oprócz konfiguracji karty.
@@ -62,7 +64,7 @@ Podczas testowania nie udało się otworzyć zasobu anonimowego na Windows 10 be
 ### Plik konfiguracyjny `/etc/samba/smb.conf`
 ![samba](https://github.com/user-attachments/assets/e235f7e7-0501-4da2-88aa-125fa4828a4c)
 
-# Iptables
+# Firewall (iptables, ufw)
 
 # Crontab ?
 
@@ -141,6 +143,58 @@ sudo iptables -t nat -A POSTROUTING -s *adres sieci*/*maska* -j MASQUERADE
 
 
 # FTP
+### **CZYTAJ KOMENTARZE**
+- Domyślny katalog konta ftp `/srv/ftp`
+- Otwórz [firewall](#firewall-iptables-ufw)
+- Żeby coś zapisać (putować) katalog musi miec 777 (moze 751 - mi nie działało)
+- Przeglądarka plików Windowsa używa portów 40000:50000
+    - otwórz je w firewallu
+    - dodaj: `pasv_min_port=40000` i `pasv_max_port=50000`
+- Istnieje `mput` i `mget`
+- Zmiana trybu między binarnym i ascii najłatwiej w kliencie ftp
+- Zmiana katalogu domowego użytkownika ftp
+  
+np.
+```sh
+sudo usermod -d *ścieżka* *użytkownik*
+```
+```sh
+sudo usermod -d /ftp ftp
+```
+
+#### Sprawdzanie pliku konfiguracyjnego (USŁUGA MUSI BYĆA ZATRZYMANA i chyba muszż być domyślne porty - nie chciało mi się sprawdzać przy testowaniu)
+```sh
+sudo vsftpd /etc/vsftpd.conf
+```
+### Szyfrowane
+- Dla TLS otworzyć port 990
+- Testowanie połączenia szyfrowanego
+```sh
+lftp localhost -d -u *uzytkownik*
+```
+### Potencjalne problemy
+- Powinno działać, ale mi się psuło przy kilku rozszerzeniach: `hide_file=*.txt,*.log`
+
+### **Wytłumaczenie: `chrootlist` - `userlist` - `ftpusers`** (nie testowałem, ale raczej dobrze)
+- wszystkim plikom można ustawić swoją ścieżkę,
+  domyślna ścieżka dla ftpusers to `/etc/ftpusers`
+1. `chrootlist`
+   - Lista użytkowników, którzy mają być uwięzieni w swoich katalogach domowych lub określonym katalogu.
+   - `chroot_local_user=YES` -  wszyscy lokalni użytkownicy będą ograniczeni do swoich katalogów domowych
+   - `chroot_list_enable=YES` - konta na liście będą uwięzione
+   - `allow_writeable_chroot=YES` - pozwala na zapisywanie w uwięzionym katalogu (domyślnie nie można)
+2. `userlist`
+   - Lista użytkowników, którym zezwolono lub zabroniono dostępu/logowania w zależności od konfiguracji.
+   - `userlist_enable=YES` - włącza działanie pliku `userlist`
+   - `userlist_deny=NO` - pozwala **TYLKO** użytkownikom z listy na logowanie się.
+   - `userlist_deny=YES` - użytkownicy będą odmówione dostępu do FTP
+3. `ftpusers`
+    - Kompletnie blokuje użytkowników od logowania się na serwer FTP.
+
+### Plik konfiguracyjny `/etc/vsftpd.conf`
+![vsftpd](https://github.com/user-attachments/assets/61ceabe9-dcd8-4a07-814d-e9222cce97f7)
+
+
 
 # Quota
 
