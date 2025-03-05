@@ -1,7 +1,7 @@
 # Mapa
 - [~Netplan~](#netplan)
 - [~Samba~](#samba)
-- [Firewall](#firewall-iptables-ufw)
+- [~Firewall~](#firewall-iptables-ufw)
 - [Crontab ?](#crontab-)
 - [SSH](#ssh)
 - [~DHCP~](#dhcp)
@@ -20,10 +20,10 @@
 # Netplan
 Mam nadzieję, że nie będzie niczego oprócz konfiguracji karty.
 
-```
+```sh
 sudo netplan apply
 ```
-```
+```sh
 sudo netplan get all
 ```
 
@@ -36,22 +36,22 @@ sudo netplan get all
 Zrób backup przed i czytaj komentarze.
 
 - Sprawdzanie konfiguracji
-```
+```sh
 testparm
 ```
 
 - Utworzenia konta w sambie
-```
+```sh
 pdbedit -a -y *user*
 ```
 
 - Sprawdzanie użytkowników samby
-```
+```sh
 pdbedit -L
 ```
 
 - Sprawdzenie aktywnych zasobów
-```
+```sh
 smbclient -L localhost
 ```
 
@@ -65,6 +65,83 @@ Podczas testowania nie udało się otworzyć zasobu anonimowego na Windows 10 be
 ![samba](https://github.com/user-attachments/assets/e235f7e7-0501-4da2-88aa-125fa4828a4c)
 
 # Firewall (iptables, ufw)
+## UFW
+- Status
+```
+sudo ufw status
+```
+- Uruchamianie
+```
+sudo ufw enable
+```
+
+```
+sudo ufw disable
+```
+- Reset
+```
+sudo ufw reset
+```
+- Dodawanie zasad
+```
+sudo ufw allow 1000:2000/tcp
+
+sudo ufw allow https
+```
+- Blokowanie
+```
+sudo ufw deny 550
+```
+- Usuwanie zasad
+```
+sudo ufw delete *numer zasady*
+```
+- Domyślne
+```
+sudo ufw default deny incoming 
+
+sudo ufw default allow outgoing
+```
+## Iptables
+- Opcje  
+	`INPUT` - przychodzący  
+	`OUTPUT` - wychodzący  
+	`FORWARD` - ruch przekazywany  
+	`DROP` - blokowanie  
+	`ACCEPT` - przepuszczanie  
+	`REJECT` - blokowanie i wysłanie odpowiedzi  
+	` -P ` - ustawienie domyślnej zasady   
+	` -A ` - (append) dodaj do tablicy  
+	` -p ` - ustaw protokół  
+	` -s ` - (source) źródło  
+	` --dport ` - (destination port)   
+	` -j ` - ustawia czy przepuszcza (`ACCEPT`) czy blokuje (`DROP`)  
+- Listowanie zasad
+```
+sudo iptables -L
+```
+- Przepuszczanie
+```
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+```
+- Blokowanie
+```
+sudo iptables -A INPUT -s 10.9.8.5 -j DROP
+```
+- Resetowanie
+```
+sudo iptables -F
+```
+- Domyślne
+```
+sudo iptables -P INPUT DROP 
+
+sudo iptables -P OUTPUT ACCEPT 
+
+sudo iptables -P FORWARD DROP
+```
+
+
 
 # Crontab ?
 
