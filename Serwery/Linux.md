@@ -274,6 +274,7 @@ lftp localhost -d -u *uzytkownik*
 
 
 # Quota
+na logike
 
 # Mail
 
