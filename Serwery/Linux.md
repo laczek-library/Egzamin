@@ -2,7 +2,7 @@
 - [~Netplan~](#netplan)
 - [~Samba~](#samba)
 - [~Firewall~](#firewall-iptables-ufw)
-- [Crontab ?](#crontab-)
+- [Crontab](#crontab)
 - [SSH](#ssh)
 - [~DHCP~](#dhcp)
 - [Apache](#apache)
@@ -143,7 +143,7 @@ sudo iptables -P FORWARD DROP
 
 
 
-# Crontab ?
+# Crontab
 
 # SSH
 
