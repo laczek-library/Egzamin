@@ -15,7 +15,9 @@
 - [DNS](#dns)
 
 ## Profil Mobilny
+Jak nie umiesz to gg
 ## Przekierowanie Plików
+Jak nie umiesz to gg
 ## DHCP
 ## IIS
 ### WWW
