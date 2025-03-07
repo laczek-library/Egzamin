@@ -3,7 +3,7 @@ Notatki na egzamin INF.02.
 
 Tak jak mówił pan Gac, będzie tu zbiór notatek na np. pliki konfiguracyjne, konfiguracje serwera bimbows.
 
-Jak ktoś chce się dołączyć to można wysyłać mi ss-y i pull requesty.
+Jak ktoś chce się dołączyć to można wysyłać mi ss-y i pull requesty. Jak chcesz to zostaniesz oznaczony.
 
 ## Arkusze Egzaminacyjne
 - [CKE](https://arkusze.pl/egzamin-zawodowy-kwalifikacja-inf-02/)
