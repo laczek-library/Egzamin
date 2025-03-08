@@ -250,7 +250,8 @@ sudo vsftpd /etc/vsftpd.conf
 lftp localhost -d -u *uzytkownik*
 ```
 ### Potencjalne problemy
-- Powinno działać, ale mi się psuło przy kilku rozszerzeniach: `hide_file=*.txt,*.log`
+- Dla kilku rozszerzeń musi byc w {} i bez spacji po przecinku   
+  `hide_file={*.txt,*.log}`
 
 ### **Wytłumaczenie: `chrootlist` - `userlist` - `ftpusers`** (nie testowałem, ale raczej dobrze)
 - wszystkim plikom można ustawić swoją ścieżkę,
@@ -269,7 +270,8 @@ lftp localhost -d -u *uzytkownik*
     - Kompletnie blokuje użytkowników od logowania się na serwer FTP.
 
 ### Plik konfiguracyjny `/etc/vsftpd.conf`
-![vsftpd](https://github.com/user-attachments/assets/61ceabe9-dcd8-4a07-814d-e9222cce97f7)
+![vsftpd](https://github.com/user-attachments/assets/308c0b19-5824-446e-9887-53ff5a1add86)
+
 
 
 
