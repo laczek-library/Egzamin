@@ -151,18 +151,11 @@ sudo iptables -P FORWARD DROP
 ### **CZYTAJ KOMENTARZE**
 ### **NIE DODAŁEM JAK SIĘ ROBI NA IPV6 (przynajmniej na teraz)**
 
-- Nazwa usługi  
-`isc-dhcp-server`
-
-- Karta DHCP  
-`/etc/default/isc-dhcp-server`
-
+- Nazwa usługi - `isc-dhcp-server`
+- Karta DHCP - `/etc/default/isc-dhcp-server`
     np.
     `INTERFACESv4="eno1"`
-
-- Plik konfiguracyjny  
-`/etc/dhcp/dhcpd.conf`
-
+- Plik konfiguracyjny - `/etc/dhcp/dhcpd.conf`
 - Plik przykładowy  
 `/usr/share/doc/isc-dhcp-server/examples/dhcpd.conf.example`
 
@@ -214,9 +207,91 @@ sudo iptables -t nat -A POSTROUTING -s *adres sieci*/*maska* -j MASQUERADE
 # Apache
 
 # DNS
+### **Zrób backup przed i czytaj komentarze.**
+- Nazwa usługi  `bind9`, `named`
+- Pliki konfiguracyjne w `/etc/bind/`
+	- Główny - `named.conf`
+	- Strefy lokalne - `named.conf.local`
+	- Opcje całej usługi - `named.conf.options`
+- Ustawienia usługi - `/etc/default/named`
+	- Dodanie wersji protokołu IP w którym będzie pracować: `OPTIONS="-u bind -4"`
+- Ma serwerze ustaw localhost/127.0.0.1 jako DNS
+- Na stacji ustaw bramę i DNS-a na adres serwera
+---
+- Rodzaje potencjalnych rekordów
+	`NS` - autorytatywny
+	`CNAME` - alias
+	`A` i `AAAA` - adresy
+	`MX` - poczta
+	`TXT` - tekstowy:
+	- `SPF` - weryfikuje, czy nadawca jest autoryzowany przez właściciela domeny
+	- `DKIM` - sprawdza autentyczność poczty
+	- `DMARC` - generuje raporty o podejrzanych e-mailach
+	`HINFO` - informacje o sprzęcie
+	`SRV` - wyszukiwanie usług sieciowych
+	`PTR` - wsteczny 
+- Sprawdzanie poprawności konfiguracji
+```sh
+sudo named-checkconf
+```
 
-### Plik konfiguracyjny `/etc/bind/*` (tymczasowy)
-![dns](https://github.com/user-attachments/assets/50912651-9d5d-41aa-a291-5af244106313)
+```sh
+sudo named-checkzone *domena* *ścieżka domeny*
+```
+- Sprawdzanie działania
+```sh
+host example.com
+host -t TXT tekst.example.com
+```
+
+```sh
+dig example.com
+dig -x 10.20.30.4
+dig -t MX poczta.example.com
+```
+
+```sh
+nslookup example.com
+nslookup 10.20.30.5
+nslookup -type=TXT spf.example.com
+```
+---
+### Potencjalne problemy
+#### W połączeniu z innym usługami - `/etc/hosts`
+- Ustawienie domeny w `/etc/hosts` pozwala innym usługom jak `SSH` na szybsze wyszukiwanie
+- Omija dynamiczne szukanie domen
+#### `/etc/resolv.conf` lub `/etc/systemd/resolved.conf`
+- Naprawia usługę jak próbuje przeszukiwać przez błędną domenę
+- Może zastąpić ustawienie localhost-a w konfiguracji karty
+- Sprawdzanie ustawień resolvectl
+```sh
+sudo resolvectl dns
+```
+
+```sh
+sudo resolvectl domain
+```
+#### Pliki konfiguracyjne
+- Pamiętaj o kropkach po nazwie domeny
+- Niektóre rekordy jak `NS` i `MX` potrzebują adresy `A`
+1. W `named.conf.options`
+	- Rekurencja nie jest potrzebna jak nie ma się internetu
+2. W `named.conf.local`
+	- Przykład w `/etc/bind/zones.rfc1918`
+	- Ustawić `allow-update {none;};` żeby nic się nie zmieniło bez naszej wiedzy
+3. Własne strefy
+	- Polecam kopiować plik `db.local` lub wcześniej zrobioną strefę
+
+---
+### Plik `/etc/bind/named.conf.options`
+![dns-3](https://github.com/user-attachments/assets/2e045f56-09c8-4c50-8429-c2b533100801)
+
+### Plik `/etc/bind/named.conf.local`
+![dns-2](https://github.com/user-attachments/assets/1f736c62-bff5-466e-a3eb-8c1b78dc84f7)
+
+### Pliki strefy przedniej i zwrotnej `/etc/bind/...`
+![dns-1](https://github.com/user-attachments/assets/021af6b9-4db0-42ed-be53-53a63fb2daf6)
+
 
 
 # FTP
